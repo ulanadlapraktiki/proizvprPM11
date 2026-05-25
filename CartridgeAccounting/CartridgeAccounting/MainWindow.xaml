@@ -1,0 +1,83 @@
+﻿<Window x:Class="CartridgeAccounting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CartridgeAccounting"
+        mc:Ignorable="d"
+        Title="Учёт картриджей для принтера" 
+        WindowStartupLocation="CenterScreen"
+        MinWidth="800" MinHeight="500" Width="646" Height="459">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   Text="Система учёта картриджей" 
+                   FontSize="28" FontWeight="Bold" 
+                   HorizontalAlignment="Center" 
+                   Margin="0,0,0,15"  
+                   Foreground="#2C3E50"/>
+
+        <UniformGrid Grid.Row="1" 
+                     Rows="3" Columns="2"
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Center">
+            
+            <Button x:Name="BtnIssued" Click="BtnIssued_Click"
+                    Width="220" Height="100" Margin="10"
+                    Background="LightBlue" FontSize="14" FontWeight="Bold">
+                <StackPanel>
+                    <TextBlock Text="📤" FontSize="36" Margin="0,0,0,5"/>
+                    <TextBlock Text="Выданные в отделение" TextWrapping="Wrap" TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="BtnReturned" Click="BtnReturned_Click"
+                    Width="220" Height="100" Margin="10"
+                    Background="LightGreen" FontSize="14" FontWeight="Bold">
+                <StackPanel>
+                    <TextBlock Text="📥" FontSize="36" Margin="0,0,0,5"/>
+                    <TextBlock Text="Принятые картриджи" TextWrapping="Wrap" TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="BtnToRefill" Click="BtnToRefill_Click"
+                    Width="220" Height="100" Margin="10"
+                    Background="LightCoral" FontSize="14" FontWeight="Bold">
+                <StackPanel>
+                    <TextBlock Text="🔄" FontSize="36" Margin="0,0,0,5"/>
+                    <TextBlock Text="Подготовленные на заправку" TextWrapping="Wrap" TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="BtnFromRefill" Click="BtnFromRefill_Click"
+                    Width="220" Height="100" Margin="10"
+                    Background="LightGoldenrodYellow" FontSize="14" FontWeight="Bold">
+                <StackPanel>
+                    <TextBlock Text="✅" FontSize="36" Margin="0,0,0,5"/>
+                    <TextBlock Text="Привезённые с заправки" TextWrapping="Wrap" TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="BtnAddCartridge" Click="BtnAddCartridge_Click"
+                    Width="240" Height="50"
+                    Background="LightGray" FontSize="14" FontWeight="Bold">
+                <StackPanel>
+                    <TextBlock Text="Добавить картридж" TextWrapping="Wrap" TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="BtnReferences" Click="BtnReferences_Click"
+                    Width="230" Height="50"
+                    Background="#95A5A6" Foreground="White" FontSize="14" FontWeight="Bold">
+                <StackPanel>
+                    <TextBlock Text="Справочники" TextWrapping="Wrap" TextAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </UniformGrid>
+    </Grid>
+</Window>
